@@ -18,7 +18,7 @@ public class RabbitMQWebController {
 	@PostMapping(value = "/send")
 	public Message sendM(@RequestParam("messageText") String messageText,
 							 @RequestParam("messageId") Long messageId) {
-//		rabbitMQSender.sendM(new Message(messageId,messageText));
+		rabbitMQSender.sendM(new Message(messageId,messageText));
 		return new Message(messageId,"success");
 	}
 
@@ -28,7 +28,7 @@ public class RabbitMQWebController {
 		Message message=new Message();
 		message.setMessageId(23L);
 		message.setMessageText("");
-//		rabbitMQSender.getM();
+		rabbitMQSender.getM();
 
 		return message;
 	}
